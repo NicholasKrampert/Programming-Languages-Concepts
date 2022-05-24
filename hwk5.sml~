@@ -1,0 +1,16 @@
+fun merge_sort _ nil = nil
+  | merge_sort f pivot :: rest = 
+    let
+      fun split nil = (nil, nil)
+        | split (a :: b) =
+          let
+            val (lower, upper) = split b
+          in
+            if f(pivot, a)
+              then (lower, a::upper)
+            else (a::lower, upper)
+          end;
+      val (lower, upper) = split rest
+    in
+      merge_sort(f, lower) @ (pivot :: merge_sort(f, upper))
+    end;

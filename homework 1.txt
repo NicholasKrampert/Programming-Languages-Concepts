@@ -1,0 +1,56 @@
+Homework 1
+
+1)
+  (-a * b) / c  ->  <aexp><aop><var> <aop> <var><aexp> <aop> <var>
+  ((a - 5) / c + 1) * 2  ->  <aexp><aexp><var> <aop> <num><aexp> <aop> <var> <aop> <num><aexp> <aop> <num>
+  2 * (x + 3) * y + z / a  ->  <num> <aop> <aexp><var> <aop> <num><aexp> <aop> <var> <aop> <var> <aop> <var>
+  2^44 + b  ->  <num><aop><num> <aop> <var>
+
+2)
+  1. <bop> := && 	//binary boolean arith op
+		   | ||
+  2. <cop> := '<' | '>' | '<=' | '>=' | '==' | '!=' 	//binary comparison op
+  3. <bexp> := <aexp>
+			| <bop>
+			| <cop>
+  4. !(a*2 <= 10 && 5 != c)
+			!
+			 \
+			  \ 
+			  &&
+			 /  \
+			/    \
+		   <=     !=
+		  /  \    / \
+		 /   10  5   c
+		*
+	   / \
+	  /   \
+	 a     2
+  5. <stmts> :=  <var_dec> := <type_name> <declarator_list>
+				 <type_name> := boolean | byte | short | int | long | char | float | doudle
+				 <declarator_list> := <declarator>
+									| <declarator> , <declarator_list>
+				 <var_dec> := <type_name> <declarator_list>
+				 <type_name> := boolean | byte | short | int | long | char | float | doudle
+				 <declarator_list> := <declarator>
+									| <declarator> , <declarator_list>
+				 <while_stmt> := while (<boolExp>) {
+						 <if_stmt> := if (<boolExp>) { <stmt> } <else_part>
+						 <else_part> := else { stmt } | <empty>
+					} 
+				 <if_stmt> := if (<boolExp>) { <stmt> } <else_part>
+				 <else_part := else { <stmt> }
+				 
+    <stmts> := <var_dec> := <type_name> <declarator_list>
+				 <type_name> := boolean | byte | short | int | long | char | float | doudle
+				 <declarator_list> := <declarator>
+									| <declarator> , <declarator_list>
+				<var_dec> := <type_name> <declarator_list>
+				 <type_name> := boolean | byte | short | int | long | char | float | doudle
+				 <declarator_list> := <declarator>
+									| <declarator> , <declarator_list>
+				<if_stmt> := if_stmt> := if (<boolExp>) { 
+						 <while_stmt> := while (<boolExp>) { <stmt> }  
+					} <else_part>
+				 <else_part := else { <stmt> }
